@@ -16,9 +16,14 @@ int	ft_putstr_fd(char *s, int fd)
 {
 	int	count;
 
-	count = ft_strlen(s);
-	if (!s || fd < 0)
+	if (!s)
+	{
+		write(fd, "(null)", 6);
 		return (0);
+	}
+	if (fd < 0)
+		return (0);
+	count = ft_strlen(s);
 	while (*s)
 	{
 		write(fd, s, 1);
