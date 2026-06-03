@@ -39,6 +39,7 @@ int	ft_printf(char const *text, ...)
 	va_list	args;
 	int		counter;
 
+	counter = 0;
 	va_start(args, text);
 	while (*text)
 	{
@@ -50,7 +51,7 @@ int	ft_printf(char const *text, ...)
 		}
 		else
 		{
-			ft_putchar_fd(*text, 1);
+			counter += ft_putchar_fd(*text, 1);
 			text++;
 		}
 	}
