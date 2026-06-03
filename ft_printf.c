@@ -46,8 +46,11 @@ int	ft_printf(char const *text, ...)
 		if (*text == '%')
 		{
 			text++;
-			counter += ft_check_for_type(*text, args);
-			text++;
+			if (*text)
+			{
+				counter += ft_check_for_type(*text, args);
+				text++;
+			}
 		}
 		else
 		{
