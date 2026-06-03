@@ -30,10 +30,7 @@ int	ft_putnbr_fd(int n, int fd)
 		n = -n;
 	}
 	if (n >= 10)
-	{
-		counter++;
-		ft_putnbr_fd(n / 10, fd);
-	}
+		counter += ft_putnbr_fd(n / 10, fd);
 	c = n % 10 + '0';
 	counter++;
 	write(fd, &c, 1);
