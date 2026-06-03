@@ -19,10 +19,7 @@ int	ft_putnbr_unsigned_fd(unsigned int n, int fd)
 
 	counter = 0;
 	if (n >= 10)
-	{
-		counter++;
-		ft_putnbr_fd(n / 10, fd);
-	}
+		counter += ft_putnbr_fd(n / 10, fd);
 	c = n % 10 + '0';
 	counter++;
 	write(fd, &c, 1);
