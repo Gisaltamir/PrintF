@@ -18,8 +18,6 @@ int	ft_puthex(char c, unsigned long num)
 	int		counter;
 
 	counter = 0;
-	if (c == 'p')
-		counter += 2;
 	if (c != 'X')
 		base = "0123456789abcdef";
 	else
