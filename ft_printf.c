@@ -29,7 +29,7 @@ int	ft_check_for_type(char c, va_list args)
 	else if (c == 'p')
 	{
 		write(1, "0x", 2);
-		return (ft_puthex(c, va_arg(args, unsigned long)));
+		return (2 + ft_puthex(c, va_arg(args, unsigned long)));
 	}
 	return (0);
 }
