@@ -14,6 +14,8 @@
 
 int	ft_check_for_type(char c, va_list args)
 {
+	unsigned long ptr;
+	
 	if (c == 'c')
 		return (ft_putchar_fd(va_arg(args, int), 1));
 	else if (c == '%')
@@ -28,8 +30,14 @@ int	ft_check_for_type(char c, va_list args)
 		return (ft_puthex(c, va_arg(args, unsigned int)));
 	else if (c == 'p')
 	{
+		ptr = va_arg(args, unsigned long);
+		if (!ptr)
+		{
+			write(1, "(nil)", 5);
+			return (5);
+		}
 		write(1, "0x", 2);
-		return (2 + ft_puthex(c, va_arg(args, unsigned long)));
+		return (2 + ft_puthex(c, ptr));
 	}
 	return (0);
 }
